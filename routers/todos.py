@@ -1,5 +1,5 @@
 from fastapi import APIRouter, Depends, Request, Form, HTTPException
-from typing import Annotated, Optional
+from typing import Optional
 
 from fastapi.templating import Jinja2Templates
 from sqlalchemy.orm import Session
