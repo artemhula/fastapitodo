@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="ui raised very padded text container segment">
+<form class="ui form" method="POST">
+  <h2 class="ui dividing header">Registration</h2>
+    {% if msg %}
+      <div class="ui yellow message">{{ msg }}</div>
+    {% endif %}
+  <div class="field">
+    <label>Name</label>
+    <div class="two fields">
+      <div class="field">
+        <input type="text" name="name" placeholder="First Name">
+      </div>
+      <div class="field">
+        <input type="text" name="surname" placeholder="Last Name">
+      </div>
+    </div>
+  </div>
+<div class="field">
+      <label>Username</label>
+      <input type="text" name="username" placeholder="Username">
+    </div>
+  <div class="field">
+      <label>Password</label>
+      <input type="password" name="password" placeholder="Password">
+    </div>
+    <div class="field">
+      <label>Confirm password</label>
+      <input type="password" name="password2" placeholder="Password">
+    </div>
+  <button class="ui button" type="submit" tabindex="0">Register</button>
+</form>
+</div>
+
+{% endblock %}

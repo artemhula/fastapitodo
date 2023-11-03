@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="ui raised very padded text container segment" style="margin-top: 30px">
+    <h2 class="ui header">Login</h2>
+<form method="POST" class="ui form" action="/auth">
+  {% if msg %}
+    {% if msg == 'Logout successful!' %}
+
+  <div class="ui green message">{{ msg }}</div>
+
+  {% else %}
+  <div class="ui orange message">{{ msg }}</div>
+
+  {% endif %}
+  {% endif %}
+  <div class="field">
+    <label>Username</label>
+    <input type="text" name="username" placeholder="Username">
+  </div>
+  <div class="field">
+    <label>Password</label>
+    <input type="password" name="password" placeholder="Password">
+  </div>
+
+  <button class="ui button" type="submit">Submit</button>
+  Don't have account? <a href="/auth/register">Register!</a>
+</form>
+</div>
+{% endblock %}
