@@ -77,7 +77,6 @@ async def read_all_todos(request: Request, db: Session = Depends(get_db)):
     return templates.TemplateResponse("index.html", {"request": request, 'todos': todos})
 
 
-
 @router.get('/edit/{id}', response_class=HTMLResponse)
 async def edit_todo_page(request: Request, id: int, db: Session = Depends(get_db)):
     user = await get_current_user(request)
@@ -102,6 +101,7 @@ async def edit_todo(request: Request, id: int, title: str = Form(...), descripti
     db.add(todo_model)
     db.commit()
     return RedirectResponse(url="/todo", status_code=status.HTTP_302_FOUND)
+
 
 @router.get('/complete/{id}')
 async def complete_todo(request: Request, id: int, db: Session = Depends(get_db)):
